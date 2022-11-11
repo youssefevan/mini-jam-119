@@ -20,5 +20,3 @@ __meta__ = {
 position = Vector2( 16, 0 )
 rotation = 3.14159
 texture = ExtResource( 2 )
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
