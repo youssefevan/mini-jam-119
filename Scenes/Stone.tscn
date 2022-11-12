@@ -9,15 +9,15 @@
 
 [node name="GameManager" parent="." instance=ExtResource( 3 )]
 
-[node name="EnemySpawner" parent="." instance=ExtResource( 4 )]
-position = Vector2( 148, 92 )
-game_manager_node = NodePath("../GameManager")
-
 [node name="TowerSpawn" parent="." instance=ExtResource( 2 )]
 position = Vector2( 192, 128 )
 
 [node name="TowerSpawn2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 324, 96 )
+
+[node name="EnemySpawner" parent="." instance=ExtResource( 4 )]
+position = Vector2( 128, 64 )
+game_manager_node = NodePath("../GameManager")
 
 [node name="TileMap" parent="." instance=ExtResource( 1 )]
 __meta__ = {
