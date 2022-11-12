@@ -3,10 +3,10 @@ extends KinematicBody2D
 var current: bool
 var towerNumber: int
 
-
 func _ready():
 	Global.numberOfTowers += 1
 	towerNumber = Global.numberOfTowers
+	get_parent().connect("deselected", self ,"_on_deselected")
 	
 func _physics_process(delta):
 	if Input.is_action_just_pressed("select1"):
@@ -43,8 +43,8 @@ func flip():
 	print (mPOS)
 	if (mPOS.x > 0):
 		$Sprite.flip_h = true
-		
 	else:
 		$Sprite.flip_h = false
-	
-	
+
+func _on_deselected():
+	current = false
