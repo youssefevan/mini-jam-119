@@ -18,7 +18,7 @@ texture = ExtResource( 1 )
 
 [node name="BowAxis" type="Node2D" parent="."]
 
-[node name="Sprite" type="Sprite" parent="BowAxis"]
+[node name="Bow" type="Sprite" parent="BowAxis"]
+position = Vector2( 16, 0 )
 rotation = 3.14159
 texture = ExtResource( 2 )
-offset = Vector2( -16, 0 )
