@@ -9,6 +9,11 @@ func _ready():
 	selected = false
 
 func _physics_process(delta):
+	if selected == true:
+		$Sprite.frame = 1
+	else:
+		$Sprite.frame = 0
+	
 	if selected and Input.is_action_just_pressed("select1"):
 		var tower = tower_node.instance()
 		add_child(tower)
