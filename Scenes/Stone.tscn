@@ -8,4 +8,10 @@
 [node name="TowerSpawn" parent="." instance=ExtResource( 2 )]
 position = Vector2( 192, 128 )
 
+[node name="TowerSpawn2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 324, 96 )
+
 [node name="TileMap" parent="." instance=ExtResource( 1 )]
+__meta__ = {
+"_edit_lock_": true
+}

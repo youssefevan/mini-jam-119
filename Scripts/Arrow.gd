@@ -1,7 +1,7 @@
 extends Area2D
 
 # Declare member variables here. Examples:
-export var speed = 750
+export var speed = 500
 var velocity = Vector2()
 
 
