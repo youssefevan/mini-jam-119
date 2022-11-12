@@ -7,10 +7,11 @@ func _ready():
 	Global.numberOfTowers += 1
 	towerNumber = Global.numberOfTowers
 	get_parent().connect("deselected", self ,"_on_deselected")
+	get_parent().connect("selected", self ,"_on_selected")
 	
 func _physics_process(delta):
-	if Input.is_action_just_pressed("select1"):
-		current = true
+#	if Input.is_action_just_pressed("select1"):
+#		current = true
 	
 	if current == true:
 		aim()
@@ -48,3 +49,6 @@ func flip():
 
 func _on_deselected():
 	current = false
+
+func _on_selected():
+	current = true

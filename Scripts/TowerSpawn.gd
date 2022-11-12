@@ -1,6 +1,7 @@
 extends Area2D
 
 signal deselected()
+signal selected()
 
 var tower_node = load("res://Scenes/Tower.tscn")
 var hover: bool
@@ -36,6 +37,7 @@ func _on_TowerSpawn_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
 			selected = true
+			emit_signal("selected")
 
 func _on_TowerSpawn_mouse_exited():
 	hover = false
