@@ -16,13 +16,16 @@ func _physics_process(delta):
 		aim()
 		shoot()
 	
-	print($BowAxis/Bow.global_position)
 	
 func aim():
 	$BowAxis.look_at(get_global_mouse_position())
 	
+	flip()
+	
 func shoot():
 	if Input.is_action_just_pressed("fire"):
+		$Animator.play("ShootAnim")
+		
 		var arrow = load("res://Arrow.tscn").instance()
 		
 		arrow.rotation = $BowAxis.global_rotation
@@ -35,5 +38,13 @@ func shoot():
 		
 		add_child(arrow)
 	
+func flip():
+	var mPOS = get_global_mouse_position() - self.global_position
+	print (mPOS)
+	if (mPOS.x > 0):
+		$Sprite.flip_h = true
+		
+	else:
+		$Sprite.flip_h = false
 	
 	
