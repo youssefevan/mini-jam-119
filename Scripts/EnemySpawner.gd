@@ -5,8 +5,8 @@ export var game_manager_node: NodePath
 onready var game_manager = get_node(game_manager_node)
 var random = RandomNumberGenerator.new()
 
-var min_spawn_rate := .3
-var max_spawn_rate := 2.0
+var min_spawn_rate := 1.0
+var max_spawn_rate := 3.0
 var min_spawn_rate_modifier := 0.8 # decreases min spawn by 20% per wave
 var spawn_wait: float
 
