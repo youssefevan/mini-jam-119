@@ -25,6 +25,24 @@ position = Vector2( 192, 192 )
 [node name="EnemySpawner" parent="." instance=ExtResource( 4 )]
 position = Vector2( 144, -16 )
 game_manager_node = NodePath("../GameManager")
+target_node = NodePath("../Apple")
+
+[node name="EnemySpawner2" parent="." instance=ExtResource( 4 )]
+position = Vector2( -16, 144 )
+game_manager_node = NodePath("../GameManager")
+vertical = true
+target_node = NodePath("../Apple")
+
+[node name="EnemySpawner3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 144, 304 )
+game_manager_node = NodePath("../GameManager")
+target_node = NodePath("../Apple")
+
+[node name="EnemySpawner4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 320, 144 )
+game_manager_node = NodePath("../GameManager")
+vertical = true
+target_node = NodePath("../Apple")
 
 [node name="TileMap" parent="." instance=ExtResource( 1 )]
 __meta__ = {
