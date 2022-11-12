@@ -1,11 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scenes/Tower.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/TowerSpawn.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Apple.tscn" type="PackedScene" id=3]
 
 [node name="Sand" type="Node2D"]
 
-[node name="Tower" parent="." instance=ExtResource( 1 )]
-position = Vector2( 224, 124 )
+[node name="Apple" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 268, 107 )
+z_index = 1
 
 [node name="TileMap" parent="." instance=ExtResource( 2 )]
+
+[node name="TowerSpawn" parent="." instance=ExtResource( 1 )]
+position = Vector2( 149, 123 )

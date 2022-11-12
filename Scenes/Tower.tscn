@@ -44,3 +44,4 @@ position = Vector2( 16, 0 )
 rotation = 3.14159
 texture = ExtResource( 2 )
 hframes = 3
+frame = 2
