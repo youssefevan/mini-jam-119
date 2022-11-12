@@ -5,6 +5,7 @@ signal selected()
 
 var tower_node = load("res://Scenes/Tower.tscn")
 var tower2_node = load("res://Scenes/Tower2.tscn")
+var tower3_node = load("res://Scenes/Tower3.tscn")
 var hover: bool
 
 export var spawnNumber: int
@@ -31,6 +32,12 @@ func _physics_process(delta):
 		var tower2 = tower2_node.instance()
 		add_child(tower2)
 		tower2.current = true
+		occupied = true
+		
+	if selected and Input.is_action_just_pressed("select3") and occupied == false:
+		var tower3 = tower3_node.instance()
+		add_child(tower3)
+		tower3.current = true
 		occupied = true
 
 func _input(event):
