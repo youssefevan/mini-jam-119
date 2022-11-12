@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends "res://Scripts/TowerBase.gd"
 
 
 # Declare member variables here. Examples:
