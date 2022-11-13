@@ -29,3 +29,7 @@ func _on_TowerDetection_body_entered(body):
 func _on_TowerDetection_body_exited(body):
 	if body.get_collision_layer() == 2:
 		tower_detected = false
+func death():
+	Global.boonDollars += 1
+	call_deferred("free")
+	

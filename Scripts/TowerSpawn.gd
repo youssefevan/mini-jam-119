@@ -27,18 +27,21 @@ func _physics_process(delta):
 		add_child(tower)
 		tower.current = true
 		occupied = true
+		Global.boonDollars -= 1
 	
 	if selected and Input.is_action_just_pressed("select2") and occupied == false:
 		var tower2 = tower2_node.instance()
 		add_child(tower2)
 		tower2.current = true
 		occupied = true
+		Global.boonDollars -= 1
 		
 	if selected and Input.is_action_just_pressed("select3") and occupied == false:
 		var tower3 = tower3_node.instance()
 		add_child(tower3)
 		tower3.current = true
 		occupied = true
+		Global.boonDollars -= 1
 
 func _input(event):
 	if event is InputEventMouseButton:
