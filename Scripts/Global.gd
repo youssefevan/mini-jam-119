@@ -21,5 +21,5 @@ func new_wave():
 	print(current_wave, ", ", death_target)
 
 func game_over():
-	print("game over")
 	game_over = true
+	
