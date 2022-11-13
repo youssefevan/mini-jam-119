@@ -11,7 +11,7 @@
 [ext_resource path="res://Scenes/Money.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Wavering.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Dark.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Dark.gd" type="Script" id=12]
+[ext_resource path="res://Scripts/Dark.gd" type="Script" id=12]
 
 [node name="Stone" type="Node2D"]
 
