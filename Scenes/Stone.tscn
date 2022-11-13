@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/TowerSpawn.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/Enemy2.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Enemy3.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Money.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Wavering.tscn" type="PackedScene" id=10]
 
 [node name="Stone" type="Node2D"]
 
@@ -130,3 +131,6 @@ position = Vector2( 144, 144 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Wavering" parent="." instance=ExtResource( 10 )]
+position = Vector2( 8, 4 )
