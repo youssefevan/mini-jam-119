@@ -129,6 +129,7 @@ __meta__ = {
 
 [node name="Money" parent="." instance=ExtResource( 9 )]
 position = Vector2( 8, 24 )
+z_index = 10
 
 [node name="Apple" parent="." instance=ExtResource( 5 )]
 position = Vector2( 144, 141 )
@@ -140,3 +141,4 @@ __meta__ = {
 
 [node name="Wavering" parent="." instance=ExtResource( 10 )]
 position = Vector2( 8, 4 )
+z_index = 10
