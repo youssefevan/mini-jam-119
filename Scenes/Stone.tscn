@@ -131,7 +131,7 @@ __meta__ = {
 position = Vector2( 8, 24 )
 
 [node name="Apple" parent="." instance=ExtResource( 5 )]
-position = Vector2( 144, 144 )
+position = Vector2( 144, 141 )
 
 [node name="borde" parent="." instance=ExtResource( 6 )]
 __meta__ = {
