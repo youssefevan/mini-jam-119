@@ -1,9 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/TowerSpawn.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/towerspawn.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/summon1button.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/summon2button.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/summon3button.png" type="Texture" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 6, 6 )
 
 [node name="TowerSpawn" type="Area2D"]
 script = ExtResource( 1 )
@@ -16,6 +22,56 @@ shape = SubResource( 1 )
 texture = ExtResource( 2 )
 hframes = 2
 
+[node name="Purchase" type="Node2D" parent="."]
+
+[node name="Spawn1" type="Area2D" parent="Purchase"]
+position = Vector2( -12, -16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collider" type="CollisionShape2D" parent="Purchase/Spawn1"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Purchase/Spawn1"]
+texture = ExtResource( 3 )
+hframes = 2
+
+[node name="Spawn2" type="Area2D" parent="Purchase"]
+position = Vector2( 0, -16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collider" type="CollisionShape2D" parent="Purchase/Spawn2"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Purchase/Spawn2"]
+texture = ExtResource( 4 )
+hframes = 2
+
+[node name="Spawn3" type="Area2D" parent="Purchase"]
+position = Vector2( 12, -16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collider" type="CollisionShape2D" parent="Purchase/Spawn3"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Purchase/Spawn3"]
+texture = ExtResource( 5 )
+hframes = 2
+
 [connection signal="input_event" from="." to="." method="_on_TowerSpawn_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_TowerSpawn_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_TowerSpawn_mouse_exited"]
+[connection signal="input_event" from="Purchase/Spawn1" to="." method="_on_Spawn1_input_event"]
+[connection signal="mouse_entered" from="Purchase/Spawn1" to="." method="_on_Spawn1_mouse_entered"]
+[connection signal="mouse_exited" from="Purchase/Spawn1" to="." method="_on_Spawn1_mouse_exited"]
+[connection signal="input_event" from="Purchase/Spawn2" to="." method="_on_Spawn2_input_event"]
+[connection signal="mouse_entered" from="Purchase/Spawn2" to="." method="_on_Spawn2_mouse_entered"]
+[connection signal="mouse_exited" from="Purchase/Spawn2" to="." method="_on_Spawn2_mouse_exited"]
+[connection signal="input_event" from="Purchase/Spawn3" to="." method="_on_Spawn3_input_event"]
+[connection signal="mouse_entered" from="Purchase/Spawn3" to="." method="_on_Spawn3_mouse_entered"]
+[connection signal="mouse_exited" from="Purchase/Spawn3" to="." method="_on_Spawn3_mouse_exited"]

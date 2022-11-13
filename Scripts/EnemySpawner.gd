@@ -15,15 +15,17 @@ var spawn_rate_modifier := 0.8 # decreases spawn rate by 10% per wave
 var spawn_wait: float
 
 var spawn: bool
+var wait: bool
 
 func _ready():
 	spawn = true
+	wait = false
 
 func _physics_process(delta):
 	random.randomize()
 	spawn_wait = random.randf_range(min_spawn_rate, max_spawn_rate)
 	
-	if spawn == true:
+	if spawn == true and wait == false and Global.game_over == false:
 		spawn_enemy()
 	
 	if (Global.death_target - Global.deaths) <= 0:
@@ -32,6 +34,10 @@ func _physics_process(delta):
 		max_spawn_rate *= spawn_rate_modifier
 		print(min_spawn_rate, ", ", max_spawn_rate)
 		print("--------")
+		wait = true
+		yield(get_tree().create_timer(10), "timeout")
+		wait = false
+		
 
 func spawn_enemy():
 	spawn = false
@@ -45,7 +51,8 @@ func spawn_enemy():
 	else: 
 		enemy.position = global_position + Vector2(0, spawn_offset)
 	
-	enemy.locate_target(target)
-	get_tree().get_root().call_deferred("add_child", enemy)
+	if Global.game_over == false:
+		enemy.locate_target(target)
+		get_tree().get_root().call_deferred("add_child", enemy)
 	
 	spawn = true
