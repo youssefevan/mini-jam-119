@@ -16,4 +16,6 @@ func new_wave():
 	deaths = 0
 	death_target *= 1.1
 	print(current_wave, ", ", death_target)
-	
+
+func game_over():
+	print("game over")

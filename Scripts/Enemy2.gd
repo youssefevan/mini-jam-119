@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export var speed = 70
+export var damage = 3
 
 var target_pos := Vector2.ZERO
 var velocity := Vector2.ZERO

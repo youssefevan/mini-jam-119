@@ -18,6 +18,7 @@ func _physics_process(delta):
 		shoot()
 	
 	if (health <= 0):
+		get_parent().occupied = false
 		call_deferred("free")
 	
 func aim():
@@ -45,6 +46,7 @@ func shoot():
 
 func _on_Hurtbox_body_entered(body):
 	if body.get_collision_layer() == 4:
-		health -= 1
-		get_parent().occupied = false
+		health -= body.damage
+		print(body.damage)
+		
 		body.call_deferred("free")

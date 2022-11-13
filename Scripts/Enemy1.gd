@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
 export var speed = 35
+export var damage = 1
+
 var target_pos := Vector2.ZERO
 var tower_pos := Vector2.ZERO
 var tower_detected: bool
