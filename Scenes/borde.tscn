@@ -3,10 +3,10 @@
 [ext_resource path="res://Scripts/borde.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 176 )
+extents = Vector2( 10, 195 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 176, 8 )
+extents = Vector2( 208.5, 10 )
 
 [node name="borde" type="Area2D"]
 collision_layer = 4
