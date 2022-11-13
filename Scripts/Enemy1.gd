@@ -26,7 +26,7 @@ func _physics_process(delta):
 		else:
 			velocity = global_position.direction_to(target_pos)
 	else:
-		velocity = lerp(velocity, 0, .5)
+		velocity = lerp(velocity, Vector2.ZERO, 2 * delta)
 	
 	if health <= 0:
 		death()

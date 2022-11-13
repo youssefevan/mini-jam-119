@@ -25,8 +25,9 @@ func _physics_process(delta):
 	random.randomize()
 	spawn_wait = random.randf_range(min_spawn_rate, max_spawn_rate)
 	
-	if spawn == true and wait == false and Global.game_over == false:
-		spawn_enemy()
+	if Global.game_over == false:
+		if spawn == true and wait == false:
+			spawn_enemy()
 	
 	if (Global.death_target - Global.deaths) <= 0:
 		Global.new_wave()

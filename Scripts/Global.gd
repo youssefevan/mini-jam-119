@@ -22,4 +22,6 @@ func new_wave():
 
 func game_over():
 	game_over = true
+	yield(get_tree().create_timer(2), "timeout")
+	get_tree().change_scene("res://Scenes/GameOver.tscn")
 	
