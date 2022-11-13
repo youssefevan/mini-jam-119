@@ -13,4 +13,4 @@ func _ready():
 func _on_borde_area_entered(area):
 	if area.get_collision_layer() == 8:
 		area.call_deferred("free")
-		print("scoop")
+		#print("scoop")

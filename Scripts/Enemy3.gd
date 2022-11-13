@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var speed = 35
+export var speed = 15
 var target_pos := Vector2.ZERO
 var tower_pos := Vector2.ZERO
 var tower_detected: bool
@@ -10,7 +10,7 @@ var health: int
 
 func _ready():
 	tower_detected = false
-	health = 2
+	health = 20
 
 func _physics_process(delta):
 	if (global_position.x - target_pos.x) <= 0:
@@ -32,7 +32,7 @@ func locate_target(target):
 	target_pos = target.global_position
 
 func death():
-	Global.boonDollars += 1
+	Global.boonDollars += 15
 	Global.deaths += 1
 	call_deferred("free")
 

@@ -1,6 +1,6 @@
 extends "res://Scripts/TowerBase.gd"
 
-export var health := 2
+export var health := 6
 
 export var active_fire_rate := 0.3
 export var passive_fire_rate := 0.5

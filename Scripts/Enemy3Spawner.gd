@@ -1,6 +1,6 @@
 extends Node2D
 
-export var ememy_type1 = preload("res://Scenes/Enemy1.tscn")
+export var ememy_type1 = preload("res://Scenes/Enemy3.tscn")
 
 export var vertical := false
 
@@ -9,8 +9,8 @@ onready var target = get_node(target_node)
 
 var random = RandomNumberGenerator.new()
 
-var min_spawn_rate := 2.0
-var max_spawn_rate := 5.0
+var min_spawn_rate := 45.0
+var max_spawn_rate := 100.0
 var spawn_rate_modifier := 0.8 # decreases spawn rate by 10% per wave
 var spawn_wait: float
 
