@@ -1,6 +1,6 @@
 extends Area2D
 
-export var health := 100
+export var health := 10
 
 func _physics_process(delta):
 	if health <= 0:

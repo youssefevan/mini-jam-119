@@ -15,33 +15,19 @@ var occupied: bool
 func _ready():
 	selected = false
 	occupied = false
+	$Purchase.visible = false
 
 func _physics_process(delta):
 	if selected == true:
+		if occupied == false:
+			$Purchase.visible = true
+		else:
+			$Purchase.visible = false
+		
 		$Sprite.frame = 1
 	else:
+		$Purchase.visible = false
 		$Sprite.frame = 0
-	
-	if selected and Input.is_action_just_pressed("select1") and occupied == false:
-		var tower = tower_node.instance()
-		add_child(tower)
-		tower.current = true
-		occupied = true
-		Global.boonDollars -= 1
-	
-	if selected and Input.is_action_just_pressed("select2") and occupied == false:
-		var tower2 = tower2_node.instance()
-		add_child(tower2)
-		tower2.current = true
-		occupied = true
-		Global.boonDollars -= 1
-		
-	if selected and Input.is_action_just_pressed("select3") and occupied == false:
-		var tower3 = tower3_node.instance()
-		add_child(tower3)
-		tower3.current = true
-		occupied = true
-		Global.boonDollars -= 1
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -61,3 +47,55 @@ func _on_TowerSpawn_mouse_exited():
 
 func _on_TowerSpawn_mouse_entered():
 	hover = true
+
+func _on_Spawn1_mouse_entered():
+	$Purchase/Spawn1/Sprite.frame = 1
+	hover = true
+
+func _on_Spawn1_mouse_exited():
+	$Purchase/Spawn1/Sprite.frame = 0
+	hover = false
+
+func _on_Spawn2_mouse_entered():
+	$Purchase/Spawn2/Sprite.frame = 1
+	hover = true
+
+func _on_Spawn2_mouse_exited():
+	$Purchase/Spawn2/Sprite.frame = 0
+	hover = false
+
+func _on_Spawn3_mouse_entered():
+	$Purchase/Spawn3/Sprite.frame = 1
+	hover = true
+
+func _on_Spawn3_mouse_exited():
+	$Purchase/Spawn3/Sprite.frame = 0
+	hover = false
+
+func _on_Spawn1_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			var tower = tower_node.instance()
+			add_child(tower)
+			tower.current = true
+			occupied = true
+			Global.boonDollars -= 1
+
+func _on_Spawn2_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			var tower2 = tower2_node.instance()
+			add_child(tower2)
+			tower2.current = true
+			occupied = true
+			Global.boonDollars -= 1
+
+
+func _on_Spawn3_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			var tower3 = tower3_node.instance()
+			add_child(tower3)
+			tower3.current = true
+			occupied = true
+			Global.boonDollars -= 1
