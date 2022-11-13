@@ -25,10 +25,10 @@ func shoot():
 		beam.rotation = $EyeAxis.global_rotation
 		beam.position = $EyeAxis/Eye.global_position - ($EyeAxis.global_position)
 		
-		add_child(beam)
+		get_parent().add_child(beam)
 
 func _on_Hurtbox_body_entered(body):
 	if body.get_collision_layer() == 4:
 		health -= 1
 		get_parent().occupied = false
-		body.death()
+		body.call_deferred("free")

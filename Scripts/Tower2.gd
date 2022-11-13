@@ -25,10 +25,10 @@ func shoot():
 		orb.rotation = $BookAxis.global_rotation
 		orb.position = $BookAxis/Book.global_position - ($BookAxis.global_position)
 		
-		add_child(orb)
+		get_parent().add_child(orb)
 
 func _on_Hurtbox_body_entered(body):
 	if body.get_collision_layer() == 4:
 		health -= 1
 		get_parent().occupied = false
-		body.death()
+		body.call_deferred("free")

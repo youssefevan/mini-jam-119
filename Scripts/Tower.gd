@@ -25,10 +25,10 @@ func shoot():
 	arrow.rotation = $BowAxis.global_rotation
 	arrow.position = $BowAxis/Bow.global_position - ($BowAxis.global_position)
 	
-	add_child(arrow)
+	get_parent().add_child(arrow)
 
 func _on_Hurtbox_body_entered(body):
 	if body.get_collision_layer() == 4:
 		health -= 1
 		get_parent().occupied = false
-		body.death()
+		body.call_deferred("free")
