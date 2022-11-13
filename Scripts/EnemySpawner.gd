@@ -1,6 +1,6 @@
 extends Node2D
 
-export var ememy_type1 = preload("res://Scenes/Enemy1.tscn")
+export (PackedScene) var enemy_type = null
 
 export var vertical := false
 
@@ -9,8 +9,8 @@ onready var target = get_node(target_node)
 
 var random = RandomNumberGenerator.new()
 
-var min_spawn_rate := 2.0
-var max_spawn_rate := 5.0
+export var min_spawn_rate := 2.0
+export var max_spawn_rate := 5.0
 var spawn_rate_modifier := 0.8 # decreases spawn rate by 10% per wave
 var spawn_wait: float
 
@@ -37,7 +37,7 @@ func spawn_enemy():
 	spawn = false
 	yield(get_tree().create_timer(spawn_wait), "timeout")
 	
-	var enemy = ememy_type1.instance()
+	var enemy = enemy_type.instance()
 	var spawn_offset = random.randf_range(-70, 70)
 	
 	if vertical == false:

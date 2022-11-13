@@ -26,3 +26,6 @@ collision_mask = 2
 
 [node name="Collider" type="CollisionShape2D" parent="TowerDetection"]
 shape = SubResource( 2 )
+
+[connection signal="body_entered" from="TowerDetection" to="." method="_on_TowerDetection_body_entered"]
+[connection signal="body_exited" from="TowerDetection" to="." method="_on_TowerDetection_body_exited"]
