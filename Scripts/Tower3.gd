@@ -31,4 +31,4 @@ func _on_Hurtbox_body_entered(body):
 	if body.get_collision_layer() == 4:
 		health -= 1
 		get_parent().occupied = false
-		body.call_deferred("free")
+		body.death()
