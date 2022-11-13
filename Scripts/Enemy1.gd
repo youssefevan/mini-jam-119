@@ -20,10 +20,13 @@ func _physics_process(delta):
 	else:
 		$Sprite.flip_h = false
 	
-	if tower_detected == true:
-		velocity = global_position.direction_to(tower_pos)
+	if Global.game_over == false:
+		if tower_detected == true:
+			velocity = global_position.direction_to(tower_pos)
+		else:
+			velocity = global_position.direction_to(target_pos)
 	else:
-		velocity = global_position.direction_to(target_pos)
+		velocity = lerp(velocity, 0, .5)
 	
 	if health <= 0:
 		death()
