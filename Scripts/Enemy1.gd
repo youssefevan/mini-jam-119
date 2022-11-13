@@ -25,3 +25,7 @@ func _on_TowerDetection_body_entered(body):
 	if body.get_collision_layer() == 2:
 		tower_detected = true
 		tower_pos = body.global_position
+
+func _on_TowerDetection_body_exited(body):
+	if body.get_collision_layer() == 2:
+		tower_detected = false

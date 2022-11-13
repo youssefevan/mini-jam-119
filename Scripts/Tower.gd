@@ -11,7 +11,6 @@ func _physics_process(delta):
 	
 	if (health <= 0):
 		call_deferred("free")
-		emit_signal("dead")
 	
 func aim():
 	$BowAxis.look_at(get_global_mouse_position())
