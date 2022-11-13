@@ -39,7 +39,7 @@ game_manager_node = NodePath("../GameManager")
 target_node = NodePath("../Apple")
 
 [node name="EnemySpawner4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 320, 144 )
+position = Vector2( 304, 144 )
 game_manager_node = NodePath("../GameManager")
 vertical = true
 target_node = NodePath("../Apple")
