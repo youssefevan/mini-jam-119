@@ -133,6 +133,7 @@ z_index = 10
 
 [node name="Apple" parent="." instance=ExtResource( 5 )]
 position = Vector2( 144, 141 )
+z_index = 6
 
 [node name="borde" parent="." instance=ExtResource( 6 )]
 __meta__ = {
