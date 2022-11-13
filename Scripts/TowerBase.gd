@@ -20,3 +20,4 @@ func _on_deselected():
 
 func _on_selected():
 	current = true
+
