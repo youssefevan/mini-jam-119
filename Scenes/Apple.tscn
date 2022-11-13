@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/Apple.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/wizdom.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/pedestal.png" type="Texture" id=3]
-[ext_resource path="res://Scripts/ProgressBar.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Health Bar.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CircleShape2D" id=5]
 radius = 1.875
@@ -25,12 +25,10 @@ texture = ExtResource( 3 )
 position = Vector2( 0.125, 0 )
 shape = SubResource( 5 )
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-margin_left = -7.0
-margin_top = -6.0
-margin_right = -3.0
-margin_bottom = 8.0
-rect_rotation = -90.0
-script = ExtResource( 4 )
+[node name="HealthBar" parent="." instance=ExtResource( 4 )]
+margin_left = -4.0
+margin_top = -9.0
+margin_right = -4.0
+margin_bottom = -9.0
 
 [connection signal="body_entered" from="." to="." method="_on_Apple_body_entered"]

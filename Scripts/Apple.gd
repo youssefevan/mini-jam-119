@@ -13,9 +13,12 @@ func _on_Apple_body_entered(body):
 		
 		if body.is_in_group("Enemy1"):
 			health -= body.damage
+			$HealthBar/ProgressBar.value -= body.damage
 		
 		if body.is_in_group("Enemy2"):
 			health -= body.damage
+			$HealthBar/ProgressBar.value -= body.damage
 		
 		if body.is_in_group("Enemy3"):
 			health -= body.damage
+			$HealthBar/ProgressBar.value -= body.damage
