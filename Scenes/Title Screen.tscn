@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Sprites/playBUTT.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/title.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Title Screen.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 40, 40 )
 
 [node name="Title Screen" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 289.0
@@ -18,8 +23,17 @@ position = Vector2( 152, 64 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
 
-[node name="StartButton" type="Sprite" parent="."]
-position = Vector2( 144, 200 )
+[node name="StartBtn" type="Area2D" parent="."]
+position = Vector2( 144, 192 )
+
+[node name="Sprite" type="Sprite" parent="StartBtn"]
 scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
 hframes = 2
+
+[node name="Collider" type="CollisionShape2D" parent="StartBtn"]
+shape = SubResource( 1 )
+
+[connection signal="input_event" from="StartBtn" to="." method="_on_StartBtn_input_event"]
+[connection signal="mouse_entered" from="StartBtn" to="." method="_on_StartBtn_mouse_entered"]
+[connection signal="mouse_exited" from="StartBtn" to="." method="_on_StartBtn_mouse_exited"]
