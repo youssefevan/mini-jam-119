@@ -22,20 +22,28 @@ __meta__ = {
 [node name="Collider" type="CollisionShape2D" parent="DeleteAll"]
 shape = SubResource( 1 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 288.0
+margin_bottom = 288.0
+color = Color( 0.113725, 0.168627, 0.32549, 1 )
+
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 32.0
-margin_top = 136.0
+margin_left = 24.0
+margin_top = 120.0
 margin_right = 256.0
-margin_bottom = 160.0
+margin_bottom = 171.0
+rect_scale = Vector2( 1.03112, 1.04804 )
+custom_colors/font_color = Color( 1, 0.92549, 0.152941, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
-text = "Game Over"
+text = "Game Over
+'R' to restart"
 align = 1
 valign = 1
 autowrap = true
 
-[connection signal="child_entered_tree" from="." to="." method="_on_GameOver_child_entered_tree"]
 [connection signal="body_entered" from="DeleteAll" to="." method="_on_DeleteAll_body_entered"]
