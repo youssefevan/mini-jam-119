@@ -39,6 +39,7 @@ func locate_target(target):
 func death():
 	Global.boonDollars += 1
 	Global.deaths += 1
+	Global.kills += 1
 	call_deferred("free")
 
 func _on_TowerDetection_body_entered(body):

@@ -3,7 +3,7 @@ extends Area2D
 signal deselected()
 signal selected()
 
-var tower_node = load("res://Scenes/Tower.tscn")
+var tower1_node = load("res://Scenes/Tower.tscn")
 var tower2_node = load("res://Scenes/Tower2.tscn")
 var tower3_node = load("res://Scenes/Tower3.tscn")
 var hover: bool
@@ -75,27 +75,33 @@ func _on_Spawn3_mouse_exited():
 func _on_Spawn1_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			var tower = tower_node.instance()
-			add_child(tower)
-			tower.current = true
-			occupied = true
-			Global.boonDollars -= 1
+			var price = 20
+			if Global.boonDollars >= price:
+				var tower1 = tower1_node.instance()
+				add_child(tower1)
+				tower1.current = true
+				occupied = true
+				Global.boonDollars -= price
 
 func _on_Spawn2_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			var tower2 = tower2_node.instance()
-			add_child(tower2)
-			tower2.current = true
-			occupied = true
-			Global.boonDollars -= 1
+			var price = 20
+			if Global.boonDollars >= price:
+				var tower2 = tower2_node.instance()
+				add_child(tower2)
+				tower2.current = true
+				occupied = true
+				Global.boonDollars -= price
 
 
 func _on_Spawn3_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			var tower3 = tower3_node.instance()
-			add_child(tower3)
-			tower3.current = true
-			occupied = true
-			Global.boonDollars -= 1
+			var price = 20
+			if Global.boonDollars >= price:
+				var tower3 = tower3_node.instance()
+				add_child(tower3)
+				tower3.current = true
+				occupied = true
+				Global.boonDollars -= price

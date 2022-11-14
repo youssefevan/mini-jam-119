@@ -32,4 +32,5 @@ func locate_target(target):
 func death():
 	Global.boonDollars += 3
 	Global.deaths += 1
+	Global.kills += 1
 	call_deferred("free")

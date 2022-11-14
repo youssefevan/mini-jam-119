@@ -6,6 +6,8 @@ var current_wave: int
 var death_target: int
 var deaths: int
 
+var kills := 0
+
 var game_over = false
 
 func _ready():
@@ -24,4 +26,8 @@ func game_over():
 	game_over = true
 	yield(get_tree().create_timer(2), "timeout")
 	get_tree().change_scene("res://Scenes/GameOver.tscn")
+	current_wave = 1
+	boonDollars = 20
+	deaths = 0
+	death_target = 20
 	
